@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department Update - Kanooz Central Planning</title>
+    
+    <!-- Modern Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Tailwind CSS 4 (via CDN for simplicity) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        :root {
+            --kcp-indigo: #1e3a8a;
+            --kcp-blue: #2563eb;
+            --kcp-orange: #f97316;
+            --kcp-gradient: linear-gradient(135deg, #1e3a8a, #2563eb, #f97316);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #0f172a;
+            min-height: 100vh;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        @keyframes kcpGrad {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .animate-kcp-gradient {
+            background: var(--kcp-gradient);
+            background-size: 200% 200%;
+            animation: kcpGrad 6s ease infinite;
+        }
+
+        .glass-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .dept-card {
+            background: white;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+        }
+        .dept-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            border-color: #2563eb44;
+        }
+        
+        .dept-header {
+            height: 160px;
+            position: relative;
+            overflow: hidden;
+        }
+        .dept-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        .dept-card:hover .dept-img {
+            transform: scale(1.1);
+        }
+        .dept-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+        }
+        .dept-icon-box {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-right: 0.75rem;
+            box-shadow: 0 8px 16px -4px rgba(0,0,0,0.3);
+        }
+
+        .dept-content {
+            padding: 1.5rem 2rem 2rem 2rem;
+            flex: 1;
+        }
+
+        .btn-update {
+            width: 100%;
+            padding: 0.875rem;
+            background: #0f172a;
+            border: none;
+            border-radius: 1rem;
+            color: white;
+            font-weight: 700;
+            font-size: 0.875rem;
+            transition: all 0.2s;
+            cursor: pointer;
+            box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.2);
+        }
+        .btn-update:hover {
+            background: #2563eb;
+            transform: scale(1.02);
+            box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Background Elements -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden opacity-[0.05] flex items-center justify-center">
+        <img src="https://lh3.googleusercontent.com/d/1oQr4RoR9ON5vK6U_oIN2hW0HdnpEloO8" alt="Watermark" class="w-[600px] max-w-[80vw] select-none">
+    </div>
+
+    <!-- Header -->
+    <header class="glass-header">
+        <div class="max-w-7xl mx-auto px-6 h-20 md:h-24 flex items-center justify-between w-full">
+            <a href="https://kanooz.com/" target="_blank" class="flex items-center gap-4 group">
+                <img src="https://kanooz.com/assets/images/logo.png" alt="Kanooz Logo" class="h-10 md:h-14 transition-transform group-hover:scale-105">
+            </a>
+
+            <div class="absolute left-1/2 -translate-x-1/2">
+                <div class="animate-kcp-gradient p-[1px] rounded-2xl shadow-xl">
+                    <div class="bg-white/10 backdrop-blur-xl px-4 md:px-10 py-3 rounded-[15px] border border-white/20 text-center">
+                        <h1 class="text-white font-extrabold text-sm md:text-xl tracking-tight uppercase whitespace-nowrap">
+                            Department Update
+                        </h1>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="https://kanoozcp.github.io/" class="flex items-center gap-2 px-4 py-2.5 bg-white/60 hover:bg-white border border-slate-200 rounded-xl text-slate-600 font-bold text-sm transition-all shadow-sm hover:shadow-md group">
+                <i data-lucide="home" class="w-4 h-4 transition-transform group-hover:scale-110"></i>
+                <span class="hidden sm:inline">Back to Portal</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-6 py-12 relative z-10 w-full flex-1">
+        <div class="bg-white rounded-[2.5rem] shadow-2xl shadow-slate-200/50 border border-slate-100 overflow-hidden">
+            <div class="p-8 md:p-12">
+                <div class="flex items-center gap-4 mb-10">
+                    <div class="w-14 h-14 bg-blue-500/10 text-blue-600 rounded-2xl flex items-center justify-center">
+                        <i data-lucide="clipboard-list" class="w-7 h-7"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900">Resource Update Portal</h2>
+                        <p class="text-slate-500 text-sm">Submit your department's status and resource requirements.</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                    <!-- Mechanical -->
+                    <div class="dept-card">
+                        <div class="dept-header">
+                            <img src="https://kanooz.com/assets/images/services/plant_turnaround/trn3.jpg?v=0.1" alt="Mechanical" class="dept-img">
+                            <div class="dept-overlay">
+                                <div class="dept-icon-box" style="background:#2563eb"><i data-lucide="settings" style="width:20px;height:20px"></i></div>
+                                <h3 class="font-bold text-white text-lg">Mechanical</h3>
+                            </div>
+                        </div>
+                        <div class="dept-content">
+                            <p class="text-sm text-slate-500 mb-6 leading-relaxed text-left">Mechanical department project related updates, status reporting & invoice tracking.</p>
+                            <button class="btn-update">Project Update</button>
+                        </div>
+                    </div>
+
+                    <!-- Catalyst -->
+                    <div class="dept-card">
+                        <div class="dept-header">
+                            <img src="https://kanooz.com/assets/images/services/catalyst_handling/cat15.jpg" alt="Catalyst" class="dept-img">
+                            <div class="dept-overlay">
+                                <div class="dept-icon-box" style="background:#f59e0b"><i data-lucide="zap" style="width:20px;height:20px"></i></div>
+                                <h3 class="font-bold text-white text-lg">Catalyst</h3>
+                            </div>
+                        </div>
+                        <div class="dept-content">
+                            <p class="text-sm text-slate-500 mb-6 leading-relaxed text-left">Catalyst handling related updates, status reporting & invoice tracking.</p>
+                            <button class="btn-update">Project Update</button>
+                        </div>
+                    </div>
+
+                    <!-- SSD -->
+                    <div class="dept-card">
+                        <div class="dept-header">
+                            <img src="https://kanooz.com/assets/images/services/chemical_cleaning/form-6.jpg" alt="SSD" class="dept-img">
+                            <div class="dept-overlay">
+                                <div class="dept-icon-box" style="background:#10b981"><i data-lucide="users" style="width:20px;height:20px"></i></div>
+                                <h3 class="font-bold text-white text-lg">SSD</h3>
+                            </div>
+                        </div>
+                        <div class="dept-content">
+                            <p class="text-sm text-slate-500 mb-6 leading-relaxed text-left">Specialized Services Division related updates, status reporting & invoice tracking.</p>
+                            <button class="btn-update">Project Update</button>
+                        </div>
+                    </div>
+
+                    <!-- Tank & Flare -->
+                    <div class="dept-card">
+                        <div class="dept-header">
+                            <img src="https://kanooz.com/assets/images/services/plant_turnaround/trn6.jpg?v=0.1" alt="Tank & Flare" class="dept-img">
+                            <div class="dept-overlay">
+                                <div class="dept-icon-box" style="background:#f97316"><i data-lucide="flame" style="width:20px;height:20px"></i></div>
+                                <h3 class="font-bold text-white text-lg">Tank & Flare</h3>
+                            </div>
+                        </div>
+                        <div class="dept-content">
+                            <p class="text-sm text-slate-500 mb-6 leading-relaxed text-left">Tank cleaning & flare system related updates, status reporting & invoice tracking.</p>
+                            <button class="btn-update">Project Update</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4 p-5 bg-blue-50/50 border border-blue-100 rounded-2xl">
+                    <i data-lucide="shield-check" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i>
+                    <div>
+                        <p class="text-xs font-bold text-blue-900 uppercase tracking-wider mb-1 text-left">Note:</p>
+                        <p class="text-[11px] text-blue-700 leading-normal text-left">
+                            Please ensure data accuracy before submission to maintain reporting consistency across dashboards.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-auto border-t border-slate-200/60 bg-white/30 backdrop-blur-3xl relative z-10 w-full">
+        <div class="max-w-7xl mx-auto px-6 py-4 md:py-6">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="flex flex-wrap items-center justify-center md:justify-start gap-x-6 gap-y-3">
+                    <div class="flex items-center gap-2 group cursor-default">
+                        <i data-lucide="map-pin" class="w-3.5 h-3.5 text-slate-400"></i>
+                        <span class="text-slate-600 font-medium text-[11px]">Dammam, KSA</span>
+                    </div>
+                    <a href="mailto:Info@kanooz.com" class="flex items-center gap-2 group">
+                        <i data-lucide="mail" class="w-3.5 h-3.5 text-blue-500"></i>
+                        <span class="text-slate-600 font-medium text-[11px] group-hover:text-blue-600 transition-colors">Info@kanooz.com</span>
+                    </a>
+                    <a href="tel:+96692000043" class="flex items-center gap-2 group">
+                        <i data-lucide="phone" class="w-3.5 h-3.5 text-emerald-500"></i>
+                        <span class="text-slate-600 font-medium text-[11px] group-hover:text-emerald-600 transition-colors">+966 92000043</span>
+                    </a>
+                </div>
+                <div class="flex items-center gap-6">
+                    <div class="flex items-center gap-3">
+                        <p class="text-slate-400 text-[10px] font-medium select-none">© 2026 Kanooz Central Planning.</p>
+                        <span class="text-[8px] font-bold text-slate-300 uppercase tracking-[0.2em] px-2 py-0.5 border border-slate-200 rounded-full select-none">v1.0.0</span>
+                    </div>
+                    <img src="https://kanooz.com/assets/images/logo.png" alt="Kanooz" class="h-8 opacity-40 grayscale hover:grayscale-0 transition-opacity">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
