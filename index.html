@@ -11,7 +11,7 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     
-    <!-- Tailwind CSS 4 (via CDN for simplicity) -->
+    <!-- Tailwind CSS 4 -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
@@ -54,6 +54,10 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
             transition: transform 0.3s ease;
             box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .header-hidden {
+            transform: translateY(-100%);
         }
 
         .dept-card {
@@ -139,7 +143,7 @@
     </div>
 
     <!-- Header -->
-    <header class="glass-header">
+    <header id="mainHeader" class="glass-header">
         <div class="max-w-7xl mx-auto px-6 h-20 md:h-24 flex items-center justify-between w-full">
             <a href="https://kanooz.com/" target="_blank" class="flex items-center gap-4 group">
                 <img src="https://kanooz.com/assets/images/logo.png" alt="Kanooz Logo" class="h-10 md:h-14 transition-transform group-hover:scale-105">
@@ -163,139 +167,206 @@
     </header>
 
     <!-- Main Content -->
-    <main class="max-w-6xl mx-auto px-6 py-12 relative z-10 w-full flex-1">
-        <div class="bg-white rounded-[2.5rem] shadow-2xl shadow-slate-200/50 border border-slate-100 overflow-hidden">
-            <div class="p-8 md:p-12">
-                <div class="flex items-center gap-4 mb-10">
-                    <div class="w-14 h-14 bg-blue-500/10 text-blue-600 rounded-2xl flex items-center justify-center">
-                        <i data-lucide="clipboard-list" class="w-7 h-7"></i>
-                    </div>
+    <main class="max-w-5xl mx-auto px-6 py-8 sm:py-12 relative z-10 w-full flex-1">
+        <!-- Header Section -->
+        <div class="mb-8">
+            <div class="flex items-center gap-4 mb-3">
+                <div class="w-12 h-12 bg-blue-500/10 text-blue-600 rounded-2xl flex items-center justify-center shadow-inner">
+                    <i data-lucide="clipboard-list" class="w-6 h-6"></i>
+                </div>
+                <h2 class="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight">
+                    Project Update <span class="text-blue-600">Portal</span>
+                </h2>
+            </div>
+            <p class="text-slate-500 font-medium text-xs sm:text-base pl-0.5">
+                Department's project status.
+            </p>
+        </div>
+
+        <!-- Cards List -->
+        <div class="flex flex-col gap-6 mb-12">
+            <!-- Mechanical -->
+            <div class="group relative bg-white rounded-3xl border border-slate-100 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-blue-200/20 hover:-translate-y-1 flex flex-col md:flex-row md:h-52 w-full">
+                <div class="md:w-72 h-48 md:h-full overflow-hidden relative shrink-0">
+                    <img src="https://kanooz.com/assets/images/services/plant_turnaround/trn3.jpg?v=0.1" alt="Mechanical" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black/60 via-black/20 to-transparent flex items-end p-6 md:p-8"></div>
+                </div>
+                <div class="flex-1 p-6 md:p-8 flex flex-col justify-between md:h-full">
                     <div>
-                        <h2 class="text-2xl font-bold text-slate-900">Project Update Portal</h2>
-                        <p class="text-slate-500 text-sm">Department's project status.</p>
+                        <div class="flex items-center gap-3.5 mb-3">
+                            <div class="w-11 h-11 bg-blue-500 text-white rounded-xl flex items-center justify-center shadow-lg shrink-0">
+                                <i data-lucide="settings" style="width:20px;height:20px"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-950 text-xl tracking-tight">Mechanical</h3>
+                                <p class="text-[10px] text-slate-400 font-bold uppercase tracking-wider pl-0.5">Project status & updates</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-500 leading-relaxed text-left pl-0.5">Mechanical department project related updates, status reporting & invoice tracking.</p>
+                    </div>
+                    <div class="mt-6 md:mt-4 flex justify-end">
+                        <a href="https://kanooz365-my.sharepoint.com/:x:/r/personal/naved_kanooz_com/Documents/Online%20Files/Department%20Updates/Mech.xlsx?d=w0270db7ba0264080ba94dcf156f60751&csf=1&web=1&e=gHWB3G" target="_blank" class="w-full md:w-auto px-8 py-3 bg-slate-900 text-white rounded-xl font-bold text-sm text-center hover:bg-blue-600 transition-all shadow-lg hover:shadow-blue-500/25 active:scale-95" style="text-decoration:none">
+                            Project Update
+                        </a>
                     </div>
                 </div>
+            </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                    <!-- Mechanical -->
-                    <div class="dept-card">
-                        <div class="dept-header">
-                            <img src="https://kanooz.com/assets/images/services/plant_turnaround/trn3.jpg?v=0.1" alt="Mechanical" class="dept-img">
-                            <div class="dept-overlay">
-                                <div class="dept-icon-box" style="background:#2563eb"><i data-lucide="settings" style="width:20px;height:20px"></i></div>
-                                <h3 class="font-bold text-white text-lg">Mechanical</h3>
-                            </div>
-                        </div>
-                        <div class="dept-content">
-                            <p class="text-sm text-slate-500 mb-6 leading-relaxed text-left">Mechanical department project related updates, status reporting & invoice tracking.</p>
-                            <!-- Replace with your actual document link inside href -->
-                            <a href="https://kanooz365-my.sharepoint.com/:x:/r/personal/naved_kanooz_com/Documents/Online%20Files/Department%20Updates/Mech.xlsx?d=w0270db7ba0264080ba94dcf156f60751&csf=1&web=1&e=gHWB3G" target="_blank" class="btn-update" style="display:block;text-align:center;text-decoration:none">Project Update</a>
-                        </div>
-                    </div>
-
-                    <!-- Catalyst -->
-                    <div class="dept-card">
-                        <div class="dept-header">
-                            <img src="https://kanooz.com/assets/images/services/catalyst_handling/cat15.jpg" alt="Catalyst" class="dept-img">
-                            <div class="dept-overlay">
-                                <div class="dept-icon-box" style="background:#f59e0b"><i data-lucide="zap" style="width:20px;height:20px"></i></div>
-                                <h3 class="font-bold text-white text-lg">Catalyst</h3>
-                            </div>
-                        </div>
-                        <div class="dept-content">
-                            <p class="text-sm text-slate-500 mb-6 leading-relaxed text-left">Catalyst handling related updates, status reporting & invoice tracking.</p>
-                            <!-- Replace with your actual document link inside href -->
-                            <a href="https://kanooz365-my.sharepoint.com/:x:/r/personal/naved_kanooz_com/Documents/Online%20Files/Department%20Updates/Catalyst.xlsx?d=w87f974fcc8c94e1aa1e0c2a942127d68&csf=1&web=1&e=d40NHF" target="_blank" class="btn-update" style="display:block;text-align:center;text-decoration:none">Project Update</a>
-                        </div>
-                    </div>
-
-                    <!-- SSD -->
-                    <div class="dept-card">
-                        <div class="dept-header">
-                            <img src="https://kanooz.com/assets/images/services/chemical_cleaning/form-6.jpg" alt="SSD" class="dept-img">
-                            <div class="dept-overlay">
-                                <div class="dept-icon-box" style="background:#10b981"><i data-lucide="users" style="width:20px;height:20px"></i></div>
-                                <h3 class="font-bold text-white text-lg">SSD</h3>
-                            </div>
-                        </div>
-                        <div class="dept-content">
-                            <p class="text-sm text-slate-500 mb-6 leading-relaxed text-left">Specialized Services Division (SSD) related updates, status reporting & invoice tracking.</p>
-                            <!-- Replace with your actual document link inside href -->
-                            <a href="https://kanooz365-my.sharepoint.com/:x:/r/personal/naved_kanooz_com/Documents/Online%20Files/Department%20Updates/SSD.xlsx?d=w338324b8d91e40fa82f111e5cb375dbe&csf=1&web=1&e=YiGU2z" target="_blank" class="btn-update" style="display:block;text-align:center;text-decoration:none">Project Update</a>
-                        </div>
-                    </div>
-
-                    <!-- Tank & Flare -->
-                    <div class="dept-card">
-                        <div class="dept-header">
-                            <img src="https://kanooz.com/assets/images/services/plant_turnaround/trn6.jpg?v=0.1" alt="Tank & Flare" class="dept-img">
-                            <div class="dept-overlay">
-                                <div class="dept-icon-box" style="background:#f97316"><i data-lucide="flame" style="width:20px;height:20px"></i></div>
-                                <h3 class="font-bold text-white text-lg">Tank & Flare</h3>
-                            </div>
-                        </div>
-                        <div class="dept-content">
-                            <p class="text-sm text-slate-500 mb-6 leading-relaxed text-left">Tank cleaning & flare system related updates, status reporting & invoice tracking.</p>
-                            <!-- Replace with your actual document link inside href -->
-                            <a href="https://kanooz365-my.sharepoint.com/:x:/r/personal/naved_kanooz_com/Documents/Online%20Files/Department%20Updates/Tank%20%26%20Flare.xlsx?d=w0c2e9d4f3430401498bd0f24df4c96e6&csf=1&web=1&e=WoQXXA" target="_blank" class="btn-update" style="display:block;text-align:center;text-decoration:none">Project Update</a>
-                        </div>
-                    </div>
-
-                    <!-- Bolting -->
-                    <div class="dept-card">
-                        <div class="dept-header">
-                            <img src="https://kanooz.com/assets/images/services/pre_commissioning/pre.jpg" alt="Bolting" class="dept-img">
-                            <div class="dept-overlay">
-                                <div class="dept-icon-box" style="background:#a855f7"><i data-lucide="wrench" style="width:20px;height:20px"></i></div>
-                                <h3 class="font-bold text-white text-lg">Bolting</h3>
-                            </div>
-                        </div>
-                        <div class="dept-content">
-                            <p class="text-sm text-slate-500 mb-6 leading-relaxed text-left">Bolt torqueing & Tensioning related updates, status reporting & invoice tracking.</p>
-                            <!-- Replace with your actual document link inside href -->
-                            <a href="https://kanooz365-my.sharepoint.com/:x:/r/personal/naved_kanooz_com/Documents/Online%20Files/Department%20Updates/Bolting.xlsx?d=w8687d21d17a74e9f8dd13083722ecd50&csf=1&web=1&e=Q4qZa1" target="_blank" class="btn-update" style="display:block;text-align:center;text-decoration:none">Project Update</a>
-                        </div>
-                    </div>
+            <!-- Catalyst -->
+            <div class="group relative bg-white rounded-3xl border border-slate-100 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-amber-200/20 hover:-translate-y-1 flex flex-col md:flex-row md:h-52 w-full">
+                <div class="md:w-72 h-48 md:h-full overflow-hidden relative shrink-0">
+                    <img src="https://kanooz.com/assets/images/services/catalyst_handling/cat15.jpg" alt="Catalyst" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black/60 via-black/20 to-transparent flex items-end p-6 md:p-8"></div>
                 </div>
-
-                <!-- Footer Note -->
-                <div class="flex items-start gap-4 p-5 bg-blue-50/50 border border-blue-100 rounded-2xl">
-                    <i data-lucide="shield-check" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i>
+                <div class="flex-1 p-6 md:p-8 flex flex-col justify-between md:h-full">
                     <div>
-                        <p class="text-xs font-bold text-blue-900 uppercase tracking-wider mb-1 text-left">Note:</p>
-                        <p class="text-[11px] text-blue-700 leading-normal text-left">
-                            Please ensure data accuracy before submission to maintain reporting consistency.
-                        </p>
+                        <div class="flex items-center gap-3.5 mb-3">
+                            <div class="w-11 h-11 bg-amber-500 text-white rounded-xl flex items-center justify-center shadow-lg shrink-0">
+                                <i data-lucide="zap" style="width:20px;height:20px"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-950 text-xl tracking-tight">Catalyst</h3>
+                                <p class="text-[10px] text-slate-400 font-bold uppercase tracking-wider pl-0.5">Project status & updates</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-500 leading-relaxed text-left pl-0.5">Catalyst handling related updates, status reporting & invoice tracking.</p>
+                    </div>
+                    <div class="mt-6 md:mt-4 flex justify-end">
+                        <a href="https://kanooz365-my.sharepoint.com/:x:/r/personal/naved_kanooz_com/Documents/Online%20Files/Department%20Updates/Catalyst.xlsx?d=w87f974fcc8c94e1aa1e0c2a942127d68&csf=1&web=1&e=d40NHF" target="_blank" class="w-full md:w-auto px-8 py-3 bg-slate-900 text-white rounded-xl font-bold text-sm text-center hover:bg-amber-600 transition-all shadow-lg hover:shadow-amber-500/25 active:scale-95" style="text-decoration:none">
+                            Project Update
+                        </a>
                     </div>
                 </div>
+            </div>
+
+            <!-- SSD -->
+            <div class="group relative bg-white rounded-3xl border border-slate-100 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-200/20 hover:-translate-y-1 flex flex-col md:flex-row md:h-52 w-full">
+                <div class="md:w-72 h-48 md:h-full overflow-hidden relative shrink-0">
+                    <img src="https://kanooz.com/assets/images/services/chemical_cleaning/form-6.jpg" alt="SSD" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black/60 via-black/20 to-transparent flex items-end p-6 md:p-8"></div>
+                </div>
+                <div class="flex-1 p-6 md:p-8 flex flex-col justify-between md:h-full">
+                    <div>
+                        <div class="flex items-center gap-3.5 mb-3">
+                            <div class="w-11 h-11 bg-emerald-500 text-white rounded-xl flex items-center justify-center shadow-lg shrink-0">
+                                <i data-lucide="users" style="width:20px;height:20px"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-950 text-xl tracking-tight">SSD</h3>
+                                <p class="text-[10px] text-slate-400 font-bold uppercase tracking-wider pl-0.5">Project status & updates</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-500 leading-relaxed text-left pl-0.5">Specialized Services Division (SSD) related updates, status reporting & invoice tracking.</p>
+                    </div>
+                    <div class="mt-6 md:mt-4 flex justify-end">
+                        <a href="https://kanooz365-my.sharepoint.com/:x:/r/personal/naved_kanooz_com/Documents/Online%20Files/Department%20Updates/SSD.xlsx?d=w338324b8d91e40fa82f111e5cb375dbe&csf=1&web=1&e=YiGU2z" target="_blank" class="w-full md:w-auto px-8 py-3 bg-slate-900 text-white rounded-xl font-bold text-sm text-center hover:bg-emerald-600 transition-all shadow-lg hover:shadow-emerald-500/25 active:scale-95" style="text-decoration:none">
+                            Project Update
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tank & Flare -->
+            <div class="group relative bg-white rounded-3xl border border-slate-100 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-orange-200/20 hover:-translate-y-1 flex flex-col md:flex-row md:h-52 w-full">
+                <div class="md:w-72 h-48 md:h-full overflow-hidden relative shrink-0">
+                    <img src="https://kanooz.com/assets/images/services/plant_turnaround/trn6.jpg?v=0.1" alt="Tank & Flare" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black/60 via-black/20 to-transparent flex items-end p-6 md:p-8"></div>
+                </div>
+                <div class="flex-1 p-6 md:p-8 flex flex-col justify-between md:h-full">
+                    <div>
+                        <div class="flex items-center gap-3.5 mb-3">
+                            <div class="w-11 h-11 bg-orange-500 text-white rounded-xl flex items-center justify-center shadow-lg shrink-0">
+                                <i data-lucide="flame" style="width:20px;height:20px"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-950 text-xl tracking-tight">Tank & Flare</h3>
+                                <p class="text-[10px] text-slate-400 font-bold uppercase tracking-wider pl-0.5">Project status & updates</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-500 leading-relaxed text-left pl-0.5">Tank cleaning & flare system related updates, status reporting & invoice tracking.</p>
+                    </div>
+                    <div class="mt-6 md:mt-4 flex justify-end">
+                        <a href="https://kanooz365-my.sharepoint.com/:x:/r/personal/naved_kanooz_com/Documents/Online%20Files/Department%20Updates/Tank%20%26%20Flare.xlsx?d=w0c2e9d4f3430401498bd0f24df4c96e6&csf=1&web=1&e=WoQXXA" target="_blank" class="w-full md:w-auto px-8 py-3 bg-slate-900 text-white rounded-xl font-bold text-sm text-center hover:bg-orange-600 transition-all shadow-lg hover:shadow-orange-500/25 active:scale-95" style="text-decoration:none">
+                            Project Update
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bolting -->
+            <div class="group relative bg-white rounded-3xl border border-slate-100 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-purple-200/20 hover:-translate-y-1 flex flex-col md:flex-row md:h-52 w-full">
+                <div class="md:w-72 h-48 md:h-full overflow-hidden relative shrink-0">
+                    <img src="https://kanooz.com/assets/images/services/pre_commissioning/pre.jpg" alt="Bolting" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black/60 via-black/20 to-transparent flex items-end p-6 md:p-8"></div>
+                </div>
+                <div class="flex-1 p-6 md:p-8 flex flex-col justify-between md:h-full">
+                    <div>
+                        <div class="flex items-center gap-3.5 mb-3">
+                            <div class="w-11 h-11 bg-purple-500 text-white rounded-xl flex items-center justify-center shadow-lg shrink-0">
+                                <i data-lucide="wrench" style="width:20px;height:20px"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-950 text-xl tracking-tight">Bolting</h3>
+                                <p class="text-[10px] text-slate-400 font-bold uppercase tracking-wider pl-0.5">Project status & updates</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-500 leading-relaxed text-left pl-0.5">Bolt torqueing & Tensioning related updates, status reporting & invoice tracking.</p>
+                    </div>
+                    <div class="mt-6 md:mt-4 flex justify-end">
+                        <a href="https://kanooz365-my.sharepoint.com/:x:/r/personal/naved_kanooz_com/Documents/Online%20Files/Department%20Updates/Bolting.xlsx?d=w8687d21d17a74e9f8dd13083722ecd50&csf=1&web=1&e=Q4qZa1" target="_blank" class="w-full md:w-auto px-8 py-3 bg-slate-900 text-white rounded-xl font-bold text-sm text-center hover:bg-purple-600 transition-all shadow-lg hover:shadow-purple-500/25 active:scale-95" style="text-decoration:none">
+                            Project Update
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Note -->
+        <div class="flex items-start gap-4 p-5 bg-blue-50/50 border border-blue-100 rounded-2xl">
+            <i data-lucide="shield-check" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i>
+            <div>
+                <p class="text-xs font-bold text-blue-900 uppercase tracking-wider mb-1 text-left">Note:</p>
+                <p class="text-[11px] text-blue-700 leading-normal text-left">
+                    Please ensure data accuracy before submission to maintain reporting consistency.
+                </p>
             </div>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="mt-auto border-t border-slate-200/60 bg-white/30 backdrop-blur-3xl relative z-10 w-full">
+    <footer class="border-t border-slate-200/60 bg-white/30 backdrop-blur-3xl relative z-10 w-full">
         <div class="max-w-7xl mx-auto px-6 py-4 md:py-6">
             <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                
                 <div class="flex flex-wrap items-center justify-center md:justify-start gap-x-6 gap-y-3">
                     <div class="flex items-center gap-2 group cursor-default">
                         <i data-lucide="map-pin" class="w-3.5 h-3.5 text-slate-400"></i>
                         <span class="text-slate-600 font-medium text-[11px]">Dammam, KSA</span>
                     </div>
+
                     <a href="mailto:Info@kanooz.com" class="flex items-center gap-2 group">
                         <i data-lucide="mail" class="w-3.5 h-3.5 text-blue-500"></i>
                         <span class="text-slate-600 font-medium text-[11px] group-hover:text-blue-600 transition-colors">Info@kanooz.com</span>
                     </a>
+
                     <a href="tel:+96692000043" class="flex items-center gap-2 group">
                         <i data-lucide="phone" class="w-3.5 h-3.5 text-emerald-500"></i>
                         <span class="text-slate-600 font-medium text-[11px] group-hover:text-emerald-600 transition-colors">+966 92000043</span>
                     </a>
                 </div>
+
                 <div class="flex items-center gap-6">
                     <div class="flex items-center gap-3">
-                        <p class="text-slate-400 text-[10px] font-medium select-none">© 2026 Kanooz Central Planning.</p>
-                        <span class="text-[8px] font-bold text-slate-300 uppercase tracking-[0.2em] px-2 py-0.5 border border-slate-200 rounded-full select-none">v1.0.0</span>
+                        <p class="text-slate-400 text-[10px] font-medium select-none">
+                            © 2026 Kanooz Central Planning.
+                        </p>
+                        <span class="text-[8px] font-bold text-slate-300 uppercase tracking-[0.2em] px-2 py-0.5 border border-slate-200 rounded-full select-none">
+                            v1.0.0
+                        </span>
                     </div>
-                    <img src="https://kanooz.com/assets/images/logo.png" alt="Kanooz" class="h-8 opacity-40 grayscale hover:grayscale-0 transition-opacity">
+                    <a href="https://kanooz-central-planning-35103598616.asia-south1.run.app/" target="_blank" rel="noopener noreferrer" class="inline-block">
+                        <img src="https://kanooz.com/assets/images/logo.png" alt="Kanooz" class="h-8 opacity-40 grayscale hover:grayscale-0 transition-opacity">
+                    </a>
                 </div>
             </div>
         </div>
@@ -303,6 +374,27 @@
 
     <script>
         lucide.createIcons();
+
+        // Header scroll effect
+        let lastScroll = 0;
+        const header = document.getElementById('mainHeader');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll <= 0) {
+                header.classList.remove('header-hidden');
+                return;
+            }
+
+            if (currentScroll > lastScroll && !header.classList.contains('header-hidden')) {
+                // Scroll down
+                header.classList.add('header-hidden');
+            } else if (currentScroll < lastScroll && header.classList.contains('header-hidden')) {
+                // Scroll up
+                header.classList.remove('header-hidden');
+            }
+            lastScroll = currentScroll;
+        });
     </script>
 </body>
 </html>
