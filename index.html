@@ -6,7 +6,9 @@
     <title>Department Update - Kanooz Central Planning</title>
     
     <!-- Modern Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
     
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -16,21 +18,22 @@
 
     <style>
         :root {
-            --kcp-indigo: #1e3a8a;
-            --kcp-blue: #2563eb;
-            --kcp-orange: #f97316;
-            --kcp-gradient: linear-gradient(135deg, #1e3a8a, #2563eb, #f97316);
+            --kcp-navy: #2A3478;
+            --kcp-indigo: #2A3478;
+            --kcp-blue: #2A3478;
+            --kcp-terracotta: #C44128;
+            --kcp-gradient: linear-gradient(135deg, #2A3478 0%, #1c245c 45%, #C44128 100%);
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
             background-color: #f8fafc;
             color: #0f172a;
             min-height: 100vh;
         }
 
         h1, h2, h3, h4 {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Plus Jakarta Sans', 'Poppins', sans-serif;
         }
 
         @keyframes kcpGrad {
@@ -72,8 +75,8 @@
         }
         .dept-card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
-            border-color: #2563eb44;
+            box-shadow: 0 25px 50px -12px rgba(42, 52, 120, 0.15);
+            border-color: rgba(42, 52, 120, 0.25);
         }
         
         .dept-header {
@@ -129,9 +132,9 @@
             box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.2);
         }
         .btn-update:hover {
-            background: #2563eb;
+            background: #2A3478;
             transform: scale(1.02);
-            box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
+            box-shadow: 0 10px 15px -3px rgba(42, 52, 120, 0.3);
         }
     </style>
 </head>
@@ -145,15 +148,15 @@
     <!-- Header -->
     <header id="mainHeader" class="glass-header">
         <div class="max-w-7xl mx-auto px-6 h-20 md:h-24 flex items-center justify-between w-full">
-            <a href="https://kanooz.com/" target="_blank" class="flex items-center gap-4 group">
-                <img src="https://kanooz.com/wp-content/uploads/2026/05/Kanooz-Logo-transparent-png-2048x556.png" alt="Kanooz Logo" class="h-10 md:h-14 transition-transform group-hover:scale-105">
+            <a href="https://kanooz.com/" target="_blank" class="flex items-center gap-4 group shrink-0" title="Kanooz">
+                <img src="https://kanooz.com/wp-content/uploads/2026/05/KANOOZ-LOGO-2026-transparent-color-2048x331.avif" alt="Kanooz Logo" class="h-8 sm:h-9 md:h-11 w-auto max-w-[160px] sm:max-w-[210px] md:max-w-[260px] object-contain transition-transform group-hover:scale-105 drop-shadow-sm">
             </a>
 
             <div class="absolute left-1/2 -translate-x-1/2">
                 <div class="animate-kcp-gradient p-[1px] rounded-2xl shadow-xl">
                     <div class="bg-white/10 backdrop-blur-xl px-4 md:px-10 py-3 rounded-[15px] border border-white/20 text-center">
                         <h1 class="text-white font-extrabold text-sm md:text-xl tracking-tight uppercase whitespace-nowrap">
-                            CENTRAL PLANNING PORTAL
+                            Department Update
                         </h1>
                     </div>
                 </div>
@@ -171,11 +174,11 @@
         <!-- Header Section -->
         <div class="mb-8">
             <div class="flex items-center gap-4 mb-3">
-                <div class="w-12 h-12 bg-blue-500/10 text-blue-600 rounded-2xl flex items-center justify-center shadow-inner">
+                <div class="w-12 h-12 rounded-2xl flex items-center justify-center shadow-inner" style="background-color: rgba(42, 52, 120, 0.08); color: #2A3478;">
                     <i data-lucide="clipboard-list" class="w-6 h-6"></i>
                 </div>
                 <h2 class="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                    Department <span class="text-blue-600">Update</span>
+                    Project Update <span style="color: #C44128;">Portal</span>
                 </h2>
             </div>
             <p class="text-slate-500 font-medium text-xs sm:text-base pl-0.5">
@@ -186,15 +189,15 @@
         <!-- Cards List -->
         <div class="flex flex-col gap-6 mb-12">
             <!-- Mechanical -->
-            <div class="group relative bg-white rounded-3xl border border-slate-100 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-blue-200/20 hover:-translate-y-1 flex flex-col md:flex-row md:h-52 w-full">
+            <div class="group relative bg-white rounded-3xl border border-slate-100 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-[#2A3478]/15 hover:-translate-y-1 flex flex-col md:flex-row md:h-52 w-full">
                 <div class="md:w-72 h-48 md:h-full overflow-hidden relative shrink-0">
-                    <img src="https://kanooz.com/wp-content/uploads/2026/07/Retubing-Bundle-Pulling-Kanooz-43.webp" alt="Mechanical" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <img src="https://kanooz.com/wp-content/uploads/2026/07/Retubing-Bundle-Pulling-Kanooz-1024x576.webp" alt="Mechanical" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                     <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black/60 via-black/20 to-transparent flex items-end p-6 md:p-8"></div>
                 </div>
                 <div class="flex-1 p-6 md:p-8 flex flex-col justify-between md:h-full">
                     <div>
                         <div class="flex items-center gap-3.5 mb-3">
-                            <div class="w-11 h-11 bg-blue-500 text-white rounded-xl flex items-center justify-center shadow-lg shrink-0">
+                            <div class="w-11 h-11 bg-[#2A3478] text-white rounded-xl flex items-center justify-center shadow-lg shrink-0">
                                 <i data-lucide="settings" style="width:20px;height:20px"></i>
                             </div>
                             <div>
@@ -205,23 +208,23 @@
                         <p class="text-sm text-slate-500 leading-relaxed text-left pl-0.5">Mechanical department project related updates, status reporting & invoice tracking.</p>
                     </div>
                     <div class="mt-6 md:mt-4 flex justify-end">
-                        <a href="https://kanooz365-my.sharepoint.com/:x:/r/personal/naved_kanooz_com/Documents/Online%20Files/Department%20Updates/Mech.xlsx?d=w0270db7ba0264080ba94dcf156f60751&csf=1&web=1&e=gHWB3G" target="_blank" class="w-full md:w-auto px-8 py-3 bg-slate-900 text-white rounded-xl font-bold text-sm text-center hover:bg-blue-600 transition-all shadow-lg hover:shadow-blue-500/25 active:scale-95" style="text-decoration:none">
-                            Update
+                        <a href="https://kanooz365-my.sharepoint.com/:x:/r/personal/naved_kanooz_com/Documents/Online%20Files/Department%20Updates/Mech.xlsx?d=w0270db7ba0264080ba94dcf156f60751&csf=1&web=1&e=gHWB3G" target="_blank" class="w-full md:w-auto px-8 py-3 bg-slate-900 text-white rounded-xl font-bold text-sm text-center hover:bg-[#2A3478] transition-all shadow-lg hover:shadow-[#2A3478]/25 active:scale-95" style="text-decoration:none">
+                            Project Update
                         </a>
                     </div>
                 </div>
             </div>
 
             <!-- Catalyst -->
-            <div class="group relative bg-white rounded-3xl border border-slate-100 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-amber-200/20 hover:-translate-y-1 flex flex-col md:flex-row md:h-52 w-full">
+            <div class="group relative bg-white rounded-3xl border border-slate-100 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-[#C44128]/15 hover:-translate-y-1 flex flex-col md:flex-row md:h-52 w-full">
                 <div class="md:w-72 h-48 md:h-full overflow-hidden relative shrink-0">
-                    <img src="https://kanooz.com/wp-content/uploads/2026/06/Catalyst-Handling-Tubular-Reactor-Services-43.webp" alt="Catalyst" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <img src="https://kanooz.com/wp-content/uploads/2026/08/catalyst-machinery-images-kanooz-1024x682.webp" alt="Catalyst" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                     <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black/60 via-black/20 to-transparent flex items-end p-6 md:p-8"></div>
                 </div>
                 <div class="flex-1 p-6 md:p-8 flex flex-col justify-between md:h-full">
                     <div>
                         <div class="flex items-center gap-3.5 mb-3">
-                            <div class="w-11 h-11 bg-amber-500 text-white rounded-xl flex items-center justify-center shadow-lg shrink-0">
+                            <div class="w-11 h-11 bg-[#C44128] text-white rounded-xl flex items-center justify-center shadow-lg shrink-0">
                                 <i data-lucide="zap" style="width:20px;height:20px"></i>
                             </div>
                             <div>
@@ -232,15 +235,15 @@
                         <p class="text-sm text-slate-500 leading-relaxed text-left pl-0.5">Catalyst handling related updates, status reporting & invoice tracking.</p>
                     </div>
                     <div class="mt-6 md:mt-4 flex justify-end">
-                        <a href="https://kanooz365-my.sharepoint.com/:x:/r/personal/naved_kanooz_com/Documents/Online%20Files/Department%20Updates/Catalyst.xlsx?d=w87f974fcc8c94e1aa1e0c2a942127d68&csf=1&web=1&e=d40NHF" target="_blank" class="w-full md:w-auto px-8 py-3 bg-slate-900 text-white rounded-xl font-bold text-sm text-center hover:bg-amber-600 transition-all shadow-lg hover:shadow-amber-500/25 active:scale-95" style="text-decoration:none">
-                            Update
+                        <a href="https://kanooz365-my.sharepoint.com/:x:/r/personal/naved_kanooz_com/Documents/Online%20Files/Department%20Updates/Catalyst.xlsx?d=w87f974fcc8c94e1aa1e0c2a942127d68&csf=1&web=1&e=d40NHF" target="_blank" class="w-full md:w-auto px-8 py-3 bg-slate-900 text-white rounded-xl font-bold text-sm text-center hover:bg-[#C44128] transition-all shadow-lg hover:shadow-[#C44128]/25 active:scale-95" style="text-decoration:none">
+                            Project Update
                         </a>
                     </div>
                 </div>
             </div>
 
             <!-- SSD -->
-            <div class="group relative bg-white rounded-3xl border border-slate-100 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-200/20 hover:-translate-y-1 flex flex-col md:flex-row md:h-52 w-full">
+            <div class="group relative bg-white rounded-3xl border border-slate-100 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-[#2A3478]/15 hover:-translate-y-1 flex flex-col md:flex-row md:h-52 w-full">
                 <div class="md:w-72 h-48 md:h-full overflow-hidden relative shrink-0">
                     <img src="https://kanooz.com/wp-content/uploads/2026/06/Chemical-Cleaning-Decontamination-image-43-1-2048x1536.webp" alt="SSD" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                     <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black/60 via-black/20 to-transparent flex items-end p-6 md:p-8"></div>
@@ -248,7 +251,7 @@
                 <div class="flex-1 p-6 md:p-8 flex flex-col justify-between md:h-full">
                     <div>
                         <div class="flex items-center gap-3.5 mb-3">
-                            <div class="w-11 h-11 bg-emerald-500 text-white rounded-xl flex items-center justify-center shadow-lg shrink-0">
+                            <div class="w-11 h-11 bg-[#2A3478] text-white rounded-xl flex items-center justify-center shadow-lg shrink-0">
                                 <i data-lucide="users" style="width:20px;height:20px"></i>
                             </div>
                             <div>
@@ -259,23 +262,23 @@
                         <p class="text-sm text-slate-500 leading-relaxed text-left pl-0.5">Specialized Services Division (SSD) related updates, status reporting & invoice tracking.</p>
                     </div>
                     <div class="mt-6 md:mt-4 flex justify-end">
-                        <a href="https://kanooz365-my.sharepoint.com/:x:/r/personal/naved_kanooz_com/Documents/Online%20Files/Department%20Updates/SSD.xlsx?d=w338324b8d91e40fa82f111e5cb375dbe&csf=1&web=1&e=YiGU2z" target="_blank" class="w-full md:w-auto px-8 py-3 bg-slate-900 text-white rounded-xl font-bold text-sm text-center hover:bg-emerald-600 transition-all shadow-lg hover:shadow-emerald-500/25 active:scale-95" style="text-decoration:none">
-                            Update
+                        <a href="https://kanooz365-my.sharepoint.com/:x:/r/personal/naved_kanooz_com/Documents/Online%20Files/Department%20Updates/SSD.xlsx?d=w338324b8d91e40fa82f111e5cb375dbe&csf=1&web=1&e=YiGU2z" target="_blank" class="w-full md:w-auto px-8 py-3 bg-slate-900 text-white rounded-xl font-bold text-sm text-center hover:bg-[#2A3478] transition-all shadow-lg hover:shadow-[#2A3478]/25 active:scale-95" style="text-decoration:none">
+                            Project Update
                         </a>
                     </div>
                 </div>
             </div>
 
             <!-- Tank & Flare -->
-            <div class="group relative bg-white rounded-3xl border border-slate-100 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-orange-200/20 hover:-translate-y-1 flex flex-col md:flex-row md:h-52 w-full">
+            <div class="group relative bg-white rounded-3xl border border-slate-100 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-[#C44128]/15 hover:-translate-y-1 flex flex-col md:flex-row md:h-52 w-full">
                 <div class="md:w-72 h-48 md:h-full overflow-hidden relative shrink-0">
-                    <img src="https://kanooz.com/wp-content/uploads/2026/06/Demountable-Flare-Maintenance-3.webp" alt="Tank & Flare" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <img src="https://kanooz.com/wp-content/uploads/2026/06/Demountable-Flare-Maintenance-3-1024x768.webp" alt="Tank & Flare" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                     <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black/60 via-black/20 to-transparent flex items-end p-6 md:p-8"></div>
                 </div>
                 <div class="flex-1 p-6 md:p-8 flex flex-col justify-between md:h-full">
                     <div>
                         <div class="flex items-center gap-3.5 mb-3">
-                            <div class="w-11 h-11 bg-orange-500 text-white rounded-xl flex items-center justify-center shadow-lg shrink-0">
+                            <div class="w-11 h-11 bg-[#C44128] text-white rounded-xl flex items-center justify-center shadow-lg shrink-0">
                                 <i data-lucide="flame" style="width:20px;height:20px"></i>
                             </div>
                             <div>
@@ -286,23 +289,23 @@
                         <p class="text-sm text-slate-500 leading-relaxed text-left pl-0.5">Tank cleaning & flare system related updates, status reporting & invoice tracking.</p>
                     </div>
                     <div class="mt-6 md:mt-4 flex justify-end">
-                        <a href="https://kanooz365-my.sharepoint.com/:x:/r/personal/naved_kanooz_com/Documents/Online%20Files/Department%20Updates/Tank%20%26%20Flare.xlsx?d=w0c2e9d4f3430401498bd0f24df4c96e6&csf=1&web=1&e=WoQXXA" target="_blank" class="w-full md:w-auto px-8 py-3 bg-slate-900 text-white rounded-xl font-bold text-sm text-center hover:bg-orange-600 transition-all shadow-lg hover:shadow-orange-500/25 active:scale-95" style="text-decoration:none">
-                            Update
+                        <a href="https://kanooz365-my.sharepoint.com/:x:/r/personal/naved_kanooz_com/Documents/Online%20Files/Department%20Updates/Tank%20%26%20Flare.xlsx?d=w0c2e9d4f3430401498bd0f24df4c96e6&csf=1&web=1&e=WoQXXA" target="_blank" class="w-full md:w-auto px-8 py-3 bg-slate-900 text-white rounded-xl font-bold text-sm text-center hover:bg-[#C44128] transition-all shadow-lg hover:shadow-[#C44128]/25 active:scale-95" style="text-decoration:none">
+                            Project Update
                         </a>
                     </div>
                 </div>
             </div>
 
             <!-- Bolting -->
-            <div class="group relative bg-white rounded-3xl border border-slate-100 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-purple-200/20 hover:-translate-y-1 flex flex-col md:flex-row md:h-52 w-full">
+            <div class="group relative bg-white rounded-3xl border border-slate-100 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-[#2A3478]/15 hover:-translate-y-1 flex flex-col md:flex-row md:h-52 w-full">
                 <div class="md:w-72 h-48 md:h-full overflow-hidden relative shrink-0">
-                    <img src="https://kanooz.com/wp-content/uploads/2026/06/Bolt-torquing-and-tensioning-image-Kanooz-43-2048x1536.webp" alt="Bolting" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <img src="https://kanooz.com/wp-content/uploads/2026/06/Bolt-torquing-and-tensioning-image-Kanooz-43-1024x768.webp" alt="Bolting" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                     <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black/60 via-black/20 to-transparent flex items-end p-6 md:p-8"></div>
                 </div>
                 <div class="flex-1 p-6 md:p-8 flex flex-col justify-between md:h-full">
                     <div>
                         <div class="flex items-center gap-3.5 mb-3">
-                            <div class="w-11 h-11 bg-purple-500 text-white rounded-xl flex items-center justify-center shadow-lg shrink-0">
+                            <div class="w-11 h-11 bg-[#2A3478] text-white rounded-xl flex items-center justify-center shadow-lg shrink-0">
                                 <i data-lucide="wrench" style="width:20px;height:20px"></i>
                             </div>
                             <div>
@@ -313,8 +316,8 @@
                         <p class="text-sm text-slate-500 leading-relaxed text-left pl-0.5">Bolt torqueing & Tensioning related updates, status reporting & invoice tracking.</p>
                     </div>
                     <div class="mt-6 md:mt-4 flex justify-end">
-                        <a href="https://kanooz365-my.sharepoint.com/:x:/r/personal/naved_kanooz_com/Documents/Online%20Files/Department%20Updates/Bolting.xlsx?d=w8687d21d17a74e9f8dd13083722ecd50&csf=1&web=1&e=Q4qZa1" target="_blank" class="w-full md:w-auto px-8 py-3 bg-slate-900 text-white rounded-xl font-bold text-sm text-center hover:bg-purple-600 transition-all shadow-lg hover:shadow-purple-500/25 active:scale-95" style="text-decoration:none">
-                            Update
+                        <a href="https://kanooz365-my.sharepoint.com/:x:/r/personal/naved_kanooz_com/Documents/Online%20Files/Department%20Updates/Bolting.xlsx?d=w8687d21d17a74e9f8dd13083722ecd50&csf=1&web=1&e=Q4qZa1" target="_blank" class="w-full md:w-auto px-8 py-3 bg-slate-900 text-white rounded-xl font-bold text-sm text-center hover:bg-[#2A3478] transition-all shadow-lg hover:shadow-[#2A3478]/25 active:scale-95" style="text-decoration:none">
+                            Project Update
                         </a>
                     </div>
                 </div>
@@ -322,11 +325,11 @@
         </div>
 
         <!-- Footer Note -->
-        <div class="flex items-start gap-4 p-5 bg-blue-50/50 border border-blue-100 rounded-2xl">
-            <i data-lucide="shield-check" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i>
+        <div class="flex items-start gap-4 p-5 rounded-2xl border" style="background-color: rgba(42, 52, 120, 0.04); border-color: rgba(42, 52, 120, 0.15);">
+            <i data-lucide="shield-check" class="w-5 h-5 shrink-0 mt-0.5" style="color: #2A3478;"></i>
             <div>
-                <p class="text-xs font-bold text-blue-900 uppercase tracking-wider mb-1 text-left">Note:</p>
-                <p class="text-[11px] text-blue-700 leading-normal text-left">
+                <p class="text-xs font-bold uppercase tracking-wider mb-1 text-left" style="color: #2A3478;">Note:</p>
+                <p class="text-[11px] leading-normal text-left" style="color: #2A3478;">
                     Please ensure data accuracy before submission to maintain reporting consistency.
                 </p>
             </div>
@@ -345,13 +348,13 @@
                     </div>
 
                     <a href="mailto:Info@kanooz.com" class="flex items-center gap-2 group">
-                        <i data-lucide="mail" class="w-3.5 h-3.5 text-blue-500"></i>
-                        <span class="text-slate-600 font-medium text-[11px] group-hover:text-blue-600 transition-colors">Info@kanooz.com</span>
+                        <i data-lucide="mail" class="w-3.5 h-3.5" style="color: #C44128;"></i>
+                        <span class="text-slate-600 font-medium text-[11px] group-hover:text-[#C44128] transition-colors">Info@kanooz.com</span>
                     </a>
 
                     <a href="tel:+96692000043" class="flex items-center gap-2 group">
-                        <i data-lucide="phone" class="w-3.5 h-3.5 text-emerald-500"></i>
-                        <span class="text-slate-600 font-medium text-[11px] group-hover:text-emerald-600 transition-colors">+966 92000043</span>
+                        <i data-lucide="phone" class="w-3.5 h-3.5" style="color: #2A3478;"></i>
+                        <span class="text-slate-600 font-medium text-[11px] group-hover:text-[#2A3478] transition-colors">+966 92000043</span>
                     </a>
                 </div>
 
@@ -361,11 +364,11 @@
                             © 2026 Kanooz Central Planning.
                         </p>
                         <span class="text-[8px] font-bold text-slate-300 uppercase tracking-[0.2em] px-2 py-0.5 border border-slate-200 rounded-full select-none">
-                            v1.0.0
+                            v2.0.0
                         </span>
                     </div>
-                    <a href="https://kanoozcp.github.io/kcpra/" target="_blank" rel="noopener noreferrer" class="inline-block">
-                        <img src="https://kanooz.com/wp-content/uploads/2026/05/Kanooz-Logo-transparent-png-2048x556.png" alt="Kanooz" class="h-8 opacity-40 grayscale hover:grayscale-0 transition-opacity">
+                    <a href="https://kanoozcp.github.io/kcpra/" target="_blank" rel="noopener noreferrer" class="inline-block" title="Kanooz">
+                        <img src="https://kanooz.com/wp-content/uploads/2026/05/KANOOZ-LOGO-2026-transparent-color-2048x331.avif" alt="Kanooz" class="h-6 md:h-7 w-auto max-w-[140px] md:max-w-[170px] object-contain opacity-75 hover:opacity-100 transition-opacity">
                     </a>
                 </div>
             </div>
